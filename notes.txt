@@ -6,3 +6,33 @@ In case you're interested, here are links to the original Bitcoin and Ethereum W
 
 Bitcoin: A Peer-to-Peer Electronic Cash System (https://bitcoin.org/bitcoin.pdf)
 Ethereum: The Ultimate Smart Contract and Decentralized Application Platform (http://web.archive.org/web/20131228111141/http://vbuterin.com/ethereum.html)
+
+---Metamask Setup---
+
+Restore info:
+    organ rural senior morning party educate round vapor gossip rain long limb
+
+---Ethereum Accounts---
+
+Composed of Account Address, Public Key, and Private Key.
+All values stores as hex. The private key value is super enormous.
+IF someone steals your private key then they can get your funds, but highly unlikely since it's so big.
+You cannot access funds to an account without its private key.
+One Ethereum account can interact across many different Ethereum networks.
+
+---Receiving Ether---(Sending and receiving Ether coins.)
+
+rinkeby-faucet.com is a webpage built by Stephen for testing.
+It will send you a tiny amount of Ether coins(.001) by entering your account.
+
+---Why'd We Wait---
+
+A single node has an entire copy of the blockchain.
+Let's leave it for now that a blockchain is essentially a database.
+Mining is what takes so long to complete the transaction.
+Your transaction along with other people's transaction is put into a "Block" that has validation logic ran against it.
+
+---Basic Blockchains---
+
+MUST WATCH TO UNDERSTAND BLOCKCHAINS.
+9:05
