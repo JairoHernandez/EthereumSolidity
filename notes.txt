@@ -35,4 +35,62 @@ Your transaction along with other people's transaction is put into a "Block" tha
 ---Basic Blockchains---
 
 MUST WATCH TO UNDERSTAND BLOCKCHAINS.
-9:05
+
+---Block Time--
+
+Hashes are 64 characters long.
+Basically Block Time is the time it takes to calculate the hash for a block chain.
+It can ben variable from block to block along the change since nodes come in and out of the network.
+YOu can check Block Time over time here --> https://etherscan.io/chart/blocktime
+
+---Smart Contracts---
+
+Only live on one network at a time.
+A contract's souce code is pretty much a class and you make instances of that class.
+
+---Our First Contract---
+
+Ethereum is an open-source, public, blockchain-based distributed computing platform featuring smart contract functionality.
+
+remix.ethereum.org.
+
+---Contrat Structure---
+
+    pragma solidity ^0.4.17;
+
+    contract Inbox{
+        string public message;
+        
+        function Inbox(string initialMessage) public {
+            message = initialMessage;
+        }
+        
+        function setMessage(string newMessage) public {
+            message = newMessage;
+        }
+        
+        function getMessage() public view returns (string) {
+            return message;
+        }
+    }
+
+---Function Declarations---
+
+Syntax(see Diagram)
+    function getMessage() public view returns (string)
+
+    See diagram to understad 'public' and 'view'. Sometimes just 'public' is used.
+    'public' nor 'privat'e indicate any sign of security it just specifies who can call function.
+    A good example of 'private' is only being able to call a function from inside another function.
+    In general we'll use 'public' but can make a helper function as 'private'.
+
+    'view' and 'constant' are equivalent... constant is the older solidity term not used anymore.
+    'returns' is only used with 'view'/'constant'.
+    You cannot return data from a function that modifies a contract so this will NOT work.
+
+        function setMessage(string newMessage) public returns (string) {
+            message = newMessage;
+            returns message;
+        }
+
+---Testing with Remix---
