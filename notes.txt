@@ -61,7 +61,7 @@ remix.ethereum.org.
     contract Inbox{
         string public message;
         
-        function Inbox(string initialMessage) public {
+        function Inbox(string initialMessage) public { // Constructor function since it shares name of contract(aka Class).
             message = initialMessage;
         }
         
@@ -94,3 +94,12 @@ Syntax(see Diagram)
         }
 
 ---Testing with Remix---
+
+In 'Run' tab in Environment field select 'JavaScript VM'.
+
+---Redeploying Contracts---
+---Behind the Scenes of Deployment---
+
+SEE DIAGRAM
+If we send a transaction into the Ethereum network and leave the 'to' field empty then that means 
+we are going to attempt to create a new contract. Data in the 'Data' field is exposed for the world to see.
