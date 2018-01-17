@@ -59,13 +59,13 @@ remix.ethereum.org.
     pragma solidity ^0.4.17;
 
     contract Inbox{
-        string public message;
+        string public message; // 'message' RETRIEVES a value.
         
         function Inbox(string initialMessage) public { // Constructor function since it shares name of contract(aka Class).
             message = initialMessage;
         }
         
-        function setMessage(string newMessage) public {
+        function setMessage(string newMessage) public { // UPDATES a value AKA creates a transaction. Also returns transaction hash/id.
             message = newMessage;
         }
         
@@ -103,3 +103,24 @@ In 'Run' tab in Environment field select 'JavaScript VM'.
 SEE DIAGRAM
 If we send a transaction into the Ethereum network and leave the 'to' field empty then that means 
 we are going to attempt to create a new contract. Data in the 'Data' field is exposed for the world to see.
+
+---More on Running Functions Than You Want to Know---
+
+To change any data on the blockchain we have to submit a transaction.
+SEE DIAGRAM.
+We also have to wait for it to be mined(go thru that proof of work algorithm), which can take 10-30 seconds to be approved.
+When we want to modify any data stored in our contract you do not want to be calling function anymore. 
+In solidity terms calling a function is the same as RETRIEVING values.
+UPDATING values creates a transaction. See section "Contrat Structure".
+
+Public networks(Main, Ropsten, Kovan, Rinkeby) have longer Block Time(time to complete transaction).\
+Simulated local network shown in this video Block Time is instant.
+
+---Wei vs Ether--
+
+Sending a transaction to function costs Ether!
+Wei is a unit of measurement.
+    1 Ether = 1,000,000,000,000,000,000 Wei
+A value of Wei cannot be fractional(decimal). It must be a whole number.
+Google wei converter --> etherconverter.online
+
