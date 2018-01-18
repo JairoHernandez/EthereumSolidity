@@ -51,8 +51,7 @@ A contract's souce code is pretty much a class and you make instances of that cl
 ---Our First Contract---
 
 Ethereum is an open-source, public, blockchain-based distributed computing platform featuring smart contract functionality.
-
-remix.ethereum.org.
+LINK: *****remix.ethereum.org****
 
 ---Contrat Structure---
 
@@ -124,3 +123,46 @@ Wei is a unit of measurement.
 A value of Wei cannot be fractional(decimal). It must be a whole number.
 Google wei converter --> etherconverter.online
 
+---Gas and Transactions--
+
+Gas system measures how much work we are executing with code.
+Just like you have to pay someone like AWS or other provider it costs money to have someone run your code.
+Same is true for Ethereum network. Gas is the price you pay for sending a transaction onto to Ethereum network.
+
+Whenever we issue a transaction that is meant to modify the blockchain with lines of code we must supply
+these two properties.
+    gasPrice: Amount of Wei the sender is willing to pay per unit gas to get this transaction processed.
+    startGas/gasLimit: Total number of units of gas we are willing to spend with this transaction.
+
+Calculation:   
+    Willing to pay 300 unit per gas(aka gasPrice) and have used 14 gas.
+    Total COST = 300 wei/gas * 14 gas = 4,200 wei
+
+Quickly imagine that there are many types of apps out there you might want to build and can start to get too
+expensive. Remember the one who creates the transaction is the one who has to pay the gas price.
+
+---Mnemonic Phrases---
+
+One Mnemonic allows you to remember the Address key, Public key, and Private key for multiple Accounts.
+It's a 12-word Mnemonic. 
+When you add a new Account you have to reinstall Metamask to generate new Mnemonic, which is easy in Chrome.
+Hopefully this refresh feature will be added in the future.
+
+shell canyon govern push oblige small record jewel float bundle approve alert
+
+YOu can convert to keys at 
+LINK: *****iancoleman.io/bip39*****
+
+---Getting More Ether---
+
+LINK: *****faucet.rinkeby.io*****
+https://www.facebook.com/jairo.hernandez.334/posts/10209368732169893
+
+---Smart Contracts with Solidity--------------------------
+---Contract Deployment---
+
+SEE DIAGRAMS.
+How do we get out bytecode over to the nework we want to deploy to??
+    ANSWER: Tool called Truffle, which is a one-stop shop for Ethereum contracts.
+
+Truffl is still going under rapid dev so something work well and some things not at all.
