@@ -166,3 +166,5 @@ How do we get out bytecode over to the nework we want to deploy to??
     ANSWER: Tool called Truffle, which is a one-stop shop for Ethereum contracts.
 
 Truffl is still going under rapid dev so something work well and some things not at all.
+Stuff breaks say after an upgrade. This is true of all Ethereum tech.
+This is why we are instead first going to put a custom node project from scratch.
