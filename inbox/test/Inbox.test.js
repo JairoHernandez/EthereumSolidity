@@ -7,21 +7,21 @@ const Web3 = require('web3'); // Name is capitalized because Web3 is a construct
 const provider = ganache.provider();
 const web3 = new Web3(provider);
 
-const { interface, bytecode } = require('../compile'); // Exported file compile.js has 'interface' and 'bytecode' properties.
+const { interface, bytecode } = require('../compile'); // Exported file compile.js has 'interface'(ABI) and 'bytecode'(compiled contract) properties.
 
 let accounts;
 let inbox;
 
-beforeEach(async () => {
+beforeEach(async () => { // Executes before every single test.
     /**************************
-    // Get a list of all accounts
+    // Interacting with ganache network. Get a list of all accounts
     web3.eth.getAccounts().then(fetchedAccounts => {
         console.log('==========', fetchedAccounts);
     });
     ***************************/
     
     // REFACTOR TO ASYNC/AWAIT
-    // Get a list of all accounts
+    // Interacting with ganache network. Get a list of all accounts
     accounts = await web3.eth.getAccounts(); // Because this function is asynchronous in nature uou have to place 'async' in beforeEach().
 
     // Use one of those accounts to deploy a contract.
