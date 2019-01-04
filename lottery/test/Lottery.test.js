@@ -98,5 +98,39 @@ describe('Lottery Contract', () => {
         }
     });
 
+    // We don't need to call enter() to test this. 
+    it('only manager can call pickWinner', async () => {
+        try
+        {
+            await lottery.methods.pickWinner().send({
+                from: accounts[1] // NOT the manager
+            });
+            assert(false); // fail test no matter what
+        } catch(err) {
+            assert(err); // Checks for truthiness
+        }
+    }) ;
+
+    it('sends mone to the winner and resets the players array', async () => {
+        // We are only entering one player in this game because if we add two or more it overcomplicates test due to the random nature of function random().
+        await lottery.methods.enter().send({
+            from: accounts[0],
+            value: web3.utils.toWei('2', 'ether') // convert .02 ethers to wei
+        });
+
+        // Returns ether in units of wei that a given account controls. Can be used on external accounts(like you and me) or of contracts. Just give it an address and it will return its balance.
+        // Also, there is a gas charge to take into account charged as a processing fee by the network.
+        const initialBalance = await web3.eth.getBalance(accounts[0]); // Should be 2 ethers less bcause of value: web3.utils.toWei('2', 'ether')
+
+        // Pick winner. Bascaily accounts[0] should receive back the 2 ether it sent in. Get yo money back!!
+        await lottery.methods.pickWinner().send({ from: accounts[0] });
+
+        const finalBalance = await web3.eth.getBalance(accounts[0]);
+
+        const difference = finalBalance - initialBalance;
+        // console.log(difference);
+        assert(difference > web3.utils.toWei('1.8', 'ether')); // Why 1.8 and not 2?? Because as an educated guestimate we are factoring in gas cost.
+    }); 
+
 });
 
