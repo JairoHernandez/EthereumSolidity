@@ -3,7 +3,8 @@ const Web3 = require('web3');
 const { interface, bytecode } = require('./compile'); // Exported file compile.js has 'interface' and 'bytecode' properties.
 
 const provider = new HDWalletProvider(
-    'shell canyon govern push oblige small record jewel float bundle approve alert', // Unlocks an Account.
+    //'shell canyon govern push oblige small record jewel float bundle approve alert', // Unlocks an Account.
+    'giggle comic affair surge lottery pet brief congress squirrel wheel chimney brown',
     'https://rinkeby.infura.io/v3/6f9e4489d9de490abc913169c6bf8107'
 );
 

@@ -25,7 +25,7 @@ contract Lottery {
         uint index = random() % players.length;
         // 'this' references instance of current contract and 'balance' is amount of ether the contract has and will send to winner.
         players[index].transfer(this.balance);
-        players = new address[](0);
+        players = new address[](0); // Dynamic array with zero elements initialized inside of it.
     }
     
     modifier restricted() {
