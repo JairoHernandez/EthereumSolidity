@@ -7,7 +7,7 @@ contract Lottery {
     address[] public players;
     
     function Lottery() public {
-        manager = msg.sender;   
+        manager = msg.sender; // person creating contract assigned to manager.  
     }
     
     function enter() public payable {
